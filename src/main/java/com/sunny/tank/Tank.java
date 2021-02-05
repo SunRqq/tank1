@@ -24,7 +24,7 @@ public class Tank extends BaseTank {
     Group group = Group.BAD;
     TankFrame tf =null;
 
-    Rectangle rect = new Rectangle();
+    public Rectangle rect = new Rectangle();
 
      FireStrategy fs ;
 
@@ -101,6 +101,7 @@ public class Tank extends BaseTank {
         }
     }
 
+    @Override
     public void paint(Graphics g) {
         if(!living){
             tf.tanks.remove(this);

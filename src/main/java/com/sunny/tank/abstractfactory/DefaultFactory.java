@@ -15,7 +15,8 @@ public  class DefaultFactory extends GameFactory {
     }
 
     @Override
-    public BaseBullet ctreateBullet(int x, int y, TankFrame tf) {
-        return new Bullet(x,y,tf);
+    public BaseBullet ctreateBullet(int x, int y, Dir dir, Group group, TankFrame tf) {
+        return new Bullet(x,y,dir,group,tf);
     }
+
 }

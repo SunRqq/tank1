@@ -25,11 +25,16 @@ public class RectExplode extends BaseExplode {
     @Override
     public void paint(Graphics g) {
         //画出一个爆炸
-        g.drawImage(ResourceMgr.explodes[step++],x,y,null);
-
-        if(step>=ResourceMgr.explodes.length){
+//        g.drawImage(ResourceMgr.explodes[step++],x,y,null);
+        //画一个方的
+        Color c = g.getColor();
+        g.setColor(Color.RED);
+        g.fillRect(x,y,10*step,10*step);
+        step++;
+        if(step>=5){
             tf.explodes.remove(this);
         }
+        g.setColor(c);
     }
 
 

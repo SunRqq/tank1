@@ -1,8 +1,7 @@
 package com.sunny.tank;
 
-import com.sunny.tank.abstractfactory.BaseExplode;
-import com.sunny.tank.abstractfactory.DefaultFactory;
-import com.sunny.tank.abstractfactory.GameFactory;
+import com.sunny.tank.abstractfactory.*;
+import org.w3c.dom.css.Rect;
 
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -16,16 +15,16 @@ public class TankFrame extends Frame {
     //tank
     Tank myTank = new Tank(200,400,Dir.DOWN,Group.GOOD,this);
     //子弹
-    public List<Bullet> bullets = new ArrayList<>();
+    public List<BaseBullet> bullets = new ArrayList<>();
     //敌方tank
     public List<Tank> tanks = new ArrayList<>();
     //爆炸
     public List<BaseExplode> explodes = new ArrayList<>();
 //    Explode e = new Explode(100,100,this);
 
-    GameFactory gf = new DefaultFactory();
+    public GameFactory gf = new Rectfactory();
 
-    static final int GAME_WIDTH=1080,GAME_HEIGHT=760;
+    public static final int GAME_WIDTH=1080,GAME_HEIGHT=760;
 
     public TankFrame() {
         setSize(GAME_WIDTH, GAME_HEIGHT);

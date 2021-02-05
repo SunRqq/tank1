@@ -16,7 +16,7 @@ public class Rectfactory extends GameFactory {
     }
 
     @Override
-    public BaseBullet ctreateBullet(int x, int y, TankFrame tf) {
-        return null;
+    public BaseBullet ctreateBullet(int x, int y,Dir dir, Group group, TankFrame tf) {
+        return new RectBullet(x,y,dir,group,tf);
     }
 }
