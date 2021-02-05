@@ -17,12 +17,12 @@ public class TankFrame extends Frame {
     //子弹
     public List<BaseBullet> bullets = new ArrayList<>();
     //敌方tank
-    public List<Tank> tanks = new ArrayList<>();
+    public List<BaseTank> tanks = new ArrayList<>();
     //爆炸
     public List<BaseExplode> explodes = new ArrayList<>();
 //    Explode e = new Explode(100,100,this);
 
-    public GameFactory gf = new Rectfactory();
+    public GameFactory gf = new DefaultFactory();
 
     public static final int GAME_WIDTH=1080,GAME_HEIGHT=760;
 

@@ -7,7 +7,7 @@ import com.sunny.tank.TankFrame;
 public class Rectfactory extends GameFactory {
     @Override
     public BaseTank ctreateTank(int x, int y, Dir dir, Group group, TankFrame tf) {
-        return null;
+        return new RectTank(x,y,dir,group,tf);
     }
 
     @Override

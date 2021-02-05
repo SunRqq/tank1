@@ -91,7 +91,7 @@ public class RectBullet extends BaseBullet {
      * @param tank
      */
     @Override
-    public void collideWith(Tank tank) {
+    public void collideWith(BaseTank tank) {
         if(this.group == tank.getGroup()){return;}
 
         //TODO:用一个rect来记录子弹的位置

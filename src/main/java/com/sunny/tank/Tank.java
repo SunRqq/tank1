@@ -21,31 +21,12 @@ public class Tank extends BaseTank {
     public static final int HEIGHT = ResourceMgr.goodTankU.getHeight();
 
     private Random random = new Random();
-    Group group = Group.BAD;
     TankFrame tf =null;
-
-    public Rectangle rect = new Rectangle();
-
      FireStrategy fs ;
 
-    public Group getGroup() {
-        return group;
-    }
-
-    public void setGroup(Group group) {
-        this.group = group;
-    }
-
-    public int getX() {
-        return x;
-    }
 
     public void setX(int x) {
         this.x = x;
-    }
-
-    public int getY() {
-        return y;
     }
 
     public void setY(int y) {
@@ -178,10 +159,31 @@ public class Tank extends BaseTank {
     }
 
     public void fire(){
-        fs.fire(this);
+//        fs.fire(this);//c策略模式
+        int bX = this.x+Tank.WIDTH/2-Bullet.WIDTH/2;
+        int bY = this.y+Tank.HEIGHT/2-Bullet.HEIGHT/2;
+
+        Dir[] dirs = Dir.values();
+        for (Dir dir :dirs) {
+            tf.gf.ctreateBullet(bX, bY, dir, group, tf);
+        }
+        if(group==Group.GOOD){
+            new Thread(() -> new Audio("audio/tank_fire.war"));
+        }
     }
 
+    @Override
     public void die() {
         this.living = false;
+    }
+
+    @Override
+    public int getX() {
+        return 0;
+    }
+
+    @Override
+    public int getY() {
+        return 0;
     }
 }

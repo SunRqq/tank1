@@ -2,6 +2,7 @@ package com.sunny.tank;
 
 
 import com.sunny.tank.abstractfactory.BaseBullet;
+import com.sunny.tank.abstractfactory.BaseTank;
 
 import java.awt.*;
 
@@ -101,7 +102,7 @@ public class Bullet extends BaseBullet {
      * @param tank
      */
     @Override
-    public void collideWith(Tank tank) {
+    public void collideWith(BaseTank tank) {
         if(this.group == tank.getGroup()){return;}
 
         //TODO:用一个rect来记录子弹的位置
